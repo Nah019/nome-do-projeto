@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to bottom, #191970, #87CEFA);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo-esquerda, .logo-direita {
+    position: absolute;
+    top: 10px;
+    width: 50px;
+}
+
+.logo-esquerda {
+    left: 10px;
+}
+
+.logo-direita {
+    right: 10px;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.content {
+    background-color: #87CEFA;
+    padding: 20px;
+}
+
+.livro {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.livro img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.sinopse {
+    background-color: #4682B4;
+    padding: 15px;
+    color: #FFFFFF;
+    width: 100%;
+    max-width: 400px;
+}
+
+footer {
+    background: linear-gradient(to top, #191970, #87CEFA);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.not-found {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+}

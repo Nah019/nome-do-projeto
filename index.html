@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="simbolo-escola.png" alt="Símbolo da Escola" class="logo-esquerda">
+        <h1>Alura Books</h1>
+        <img src="simbolo-escola.png" alt="Símbolo da Escola" class="logo-direita">
+    </header>
+    
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Pesquise um livro...">
+    </div>
+
+    <div class="content">
+        <div class="livro">
+            <img src="quatro-vidas-de-um-cachorro.jpg" alt="Quatro Vidas de um Cachorro">
+            <div class="sinopse">
+                <p>Sinopse do livro "Quatro Vidas de um Cachorro": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="malala.jpg" alt="Malala">
+            <div class="sinopse">
+                <p>Sinopse do livro "Malala": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="crepusculo-1.jpg" alt="Crepúsculo 1">
+            <div class="sinopse">
+                <p>Sinopse do livro "Crepúsculo 1": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="a-garota-do-lago.jpg" alt="A Garota do Lago">
+            <div class="sinopse">
+                <p>Sinopse do livro "A Garota do Lago": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="a-cinco-passos-de-voce.jpg" alt="A Cinco Passos de Você">
+            <div class="sinopse">
+                <p>Sinopse do livro "A Cinco Passos de Você": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="o-deus-que-destroi-sonhos.jpg" alt="O Deus que Destrói Sonhos">
+            <div class="sinopse">
+                <p>Sinopse do livro "O Deus que Destrói Sonhos": ...</p>
+            </div>
+        </div>
+        <div class="livro">
+            <img src="e-assim-que-acaba.jpg" alt="É Assim que Acaba">
+            <div class="sinopse">
+                <p>Sinopse do livro "É Assim que Acaba": ...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Naára e Emanuelly</p>
+    </footer>
+
+    <script>
+        document.getElementById('searchBar').addEventListener('input', function() {
+            let livros = document.querySelectorAll('.livro');
+            let searchQuery = this.value.toLowerCase();
+            let found = false;
+
+            livros.forEach(function(livro) {
+                let title = livro.querySelector('img').alt.toLowerCase();
+                if (title.includes(searchQuery)) {
+                    livro.style.display = 'block';
+                    found = true;
+                } else {
+                    livro.style.display = 'none';
+                }
+            });
+
+            if (!found && searchQuery !== '') {
+                document.querySelector('.content').innerHTML = '<p class="not-found">Nenhum livro encontrado</p>';
+            } else {
+                document.querySelector('.not-found')?.remove();
+            }
+        });
+    </script>
+</body>
+</html>
